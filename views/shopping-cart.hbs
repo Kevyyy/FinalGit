@@ -1,0 +1,33 @@
+
+{{#if products }}
+    <div id="container">
+                {{# each products }}
+        <div id="border">
+            <ul>
+                    <li class="list-group-item"><a>{{ this.qty }}{{ this.item.title }}${{ this.price }}</a>
+                    <li><a href="#">Reduce by 1</a></li>
+                    <li><a href="#">Remove All</a></li>
+                            </ul>
+                        </div>
+                    </li>
+            </ul>
+        </div>
+                {{/each}}
+    </div>
+    <div class="row">
+            <strong>Total: {{ totalPrice }}</strong>
+    </div>
+    <hr>
+    <div class="row">
+       
+            <a href="/checkout" type="button" class="btn btn-success">Checkout</a>
+        </div>
+    </div>
+{{ else }}
+    <div class="row">
+        <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
+            <h2>No Items in Cart</h2>
+        </div>
+    </div>
+{{/if}}
+

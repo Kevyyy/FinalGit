@@ -1,0 +1,30 @@
+<link rel='stylesheet' href='/stylesheets/navbar.css' />
+<nav>	
+	<div class="nav-left">
+			<ul>
+				<li><a id="first" href="/shopping">Product</a></li>
+				<li><a href="/login">Tracking</a></li>
+			</ul>
+	</div>
+	<div class="nav-right">
+			<ul>
+				<li><a href="/shopping_cart">ENG</a></li>
+				<button class="button"><a id="button"href="/signup">Register</a></button>
+				<li><a href="/login">Sign in</a></li>
+				<li><a>-</a></li>
+				<li><a href="/shopping-cart"><i class="fas fa-shopping-basket fa-2x"></i>{{session.cart.totalQty}}</a></li>
+			</ul>
+	</div>
+			<div id="retainer">
+			<ul>
+			<div class="dropdown">
+				<li><a>&#9776;</a></li>
+				<div class="dropdown-content">
+				<a >Home</a>
+    			<a >Our programs</a>
+    			<a>Contact</a>
+    			</div>
+				<button class="button" ><a id="button">Let's Cooperate</a></button>
+			</ul>
+			</div>
+</nav>

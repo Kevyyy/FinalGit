@@ -1,0 +1,33 @@
+body {
+  margin:0px;
+  padding:0px;
+  background-color:#D3D3D3;
+}
+#padding{
+  padding-top:180px;
+}
+#container{
+  display:grid;
+  grid-template-columns: 33% 33% 33%;
+}
+.thumbnail {
+  text-align: center;
+  border:1px black solid;
+  margin:20px;
+}
+.thumbnail img {
+  max-height: 100px;
+  text-align: center;
+}
+.description{
+  font-weight: bold;
+  font-size: 10px;
+}
+.thumbnail .description {
+  color: black;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 2px;
+}
