@@ -6,8 +6,8 @@ var Cart = require('../config/models/cart');
 var Order = require('../config/models/order');
 var csrf = require('csurf');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
-
+//mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true });
 
 var csrfProtection = csrf();
 /* GET home page. */
