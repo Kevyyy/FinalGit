@@ -2,11 +2,9 @@
 //file that is manually run
 var Product = require('../models/product');
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
+var url = process.env.MONGO_URI ||'mongodb://localhost:27017/shopping';
+mongoose.connect(url, {useNewUrlParser: true });
 
-
-
-  
 
 var products = [
 new Product({
