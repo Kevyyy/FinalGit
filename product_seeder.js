@@ -4,8 +4,8 @@ var Product = require('./config/models/product');
 ('./routes/index');
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
-mongoose.connect("mongodb://heroku_85xlwrbl:b8ctuv3u5q8qa30pmkhfih85pq@ds161517.mlab.com:61517/heroku_85xlwrbl", {useNewUrlParser: true });
-
+var url = process.env.MONGODB_URI ||'mongodb://localhost:27017/shopping';
+mongoose.connect(url, {useNewUrlParser: true });
 
   
 

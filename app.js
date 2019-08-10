@@ -19,8 +19,8 @@ var flash = require('connect-flash');
 var mongoose = require('mongoose');
 var mongoStore = require('connect-mongo')(session);
 var csrf = require('csurf');
-mongoose.connect("mongodb://heroku_85xlwrbl:b8ctuv3u5q8qa30pmkhfih85pq@ds161517.mlab.com:61517/heroku_85xlwrbl",{ useNewUrlParser: true });
-
+var url = process.env.MONGODB_URI ||'mongodb://localhost:27017/shopping';
+mongoose.connect(url, {useNewUrlParser: true });
 var usersRouter = require('./routes/users');
 require('./config/user_login.js')(passport);
 var indexRouter= require('./routes/index');

@@ -2,8 +2,8 @@ var LocalStrategy = require("passport-local").Strategy;
 
 var mysql = require('mysql');
 var bcrypt = require('bcrypt-nodejs');
-//var dbconfig = require('./models/database_config.js');
-var dbconfig = require('./models/database_config_server.js');
+var dbconfig = require('./models/database_config.js');
+//var dbconfig = require('./models/database_config_server.js');
 var connection = mysql.createConnection(dbconfig.connection);
 
 connection.query('USE ' + dbconfig.database);
