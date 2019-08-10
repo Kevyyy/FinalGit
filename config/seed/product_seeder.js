@@ -4,6 +4,10 @@ var Product = require('../models/product');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
 
+
+
+  
+
 var products = [
 new Product({
     imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
@@ -33,9 +37,11 @@ new Product({
     imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
     title: 'Dark Souls 3 Video Game',
     description: 'I died!',
-    price: 50
+    price: 50000
 })
 ];
+
+
 
 var done = 0;
 for (var i = 0; i < products.length; i++) {
@@ -49,4 +55,5 @@ for (var i = 0; i < products.length; i++) {
 
 function exit() {
     mongoose.disconnect();
-};
+}
+

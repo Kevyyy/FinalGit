@@ -5,8 +5,8 @@
         <div id="border">
             <ul>
                     <li class="list-group-item"><a>{{ this.qty }}{{ this.item.title }}${{ this.price }}</a>
-                    <li><a href="#">Reduce by 1</a></li>
-                    <li><a href="#">Remove All</a></li>
+                    <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
+                    <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
                             </ul>
                         </div>
                     </li>

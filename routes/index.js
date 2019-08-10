@@ -3,7 +3,10 @@ var router = express.Router()
 var passport = require('passport');
 var product = require('../config/models/product');
 var Cart = require('../config/models/cart');
+var Order = require('../config/models/order');
 var csrf = require('csurf');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
 
 
 var csrfProtection = csrf();
@@ -113,6 +116,24 @@ router.get('/addcart/:id',function(req,res,next){
   });
 });
 
+router.get('/reduce/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.reduceByOne(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart');
+});
+
+router.get('/remove/:id', function(req, res, next) {
+  var productId = req.params.id;
+  var cart = new Cart(req.session.cart ? req.session.cart : {});
+
+  cart.removeItem(productId);
+  req.session.cart = cart;
+  res.redirect('/shopping-cart');
+});
+
 router.get('/shopping-cart', function(req, res, next) {
   if (!req.session.cart) {
     console.log(req.session.cart);
@@ -131,10 +152,10 @@ router.get('/shopping-cart', function(req, res, next) {
 router.get('/checkout', function(req, res, next) {
 var stripePublicKey = process.env.STRIPE_PUBLIC_KEY;
 
-  res.render("checkout",{
-  stripePublicKey: stripePublicKey,
-  style:'checkout.css',
-  });
+res.render("checkout",{
+stripePublicKey: stripePublicKey,
+style:'checkout.css',
+});
 });
 
 router.post('/checkout', function(req, res, next) {
@@ -144,20 +165,31 @@ router.post('/checkout', function(req, res, next) {
   var cart = new Cart(req.session.cart);
   const stripe = require('stripe')('sk_test_8NkaaWBV0Uyhy84hka8O2fFt007xFkVErG');
   const token = req.body.stripeToken; 
-  console.log('gothere!');
+  console.log("gothereee!");
   (async () => {
     const charge = await stripe.charges.create({
       amount:  cart.totalPrice*100,
       currency: 'usd',
       description: 'Example charge',
       source: token,
-      metadata: {order_id: 6735},
     });
- })
- console.log("dsafasdfa");
+  })();
+  var order = new Order({
+    cart: cart,
+    address: req.body.address,
+    name: req.body.name,
+});
+console.log(order);
+order.save(function(err, result) {
+  if (err) {
+    throw (err);
+  }
+    req.flash('success', 'Successfully bought product!');
+    req.session.cart = null;
+    res.redirect('/shopping');
+});
+});
 
- res.redirect('/shopping');
-  });
 
 module.exports = router;
 //end login
