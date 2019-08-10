@@ -7,7 +7,7 @@ var Order = require('../config/models/order');
 var csrf = require('csurf');
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true });
+mongoose.connect("mongodb://heroku_85xlwrbl:b8ctuv3u5q8qa30pmkhfih85pq@ds161517.mlab.com:61517/heroku_85xlwrbl", {useNewUrlParser: true });
 
 var csrfProtection = csrf();
 /* GET home page. */
