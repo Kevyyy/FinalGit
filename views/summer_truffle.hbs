@@ -1,0 +1,55 @@
+<div id='errors'>
+	{{#if hasErrors}}
+	{{# each messages}}
+	<p>{{this}}</p>
+	{{/each}}
+	{{/if}}
+
+	<div id="container">
+		<div id="wrapper">
+		</div>
+		<div id="textDescriptionWrapper">
+			<div id="picture">
+				<img id="img" src="/images/summer_truffles.png">
+			</div>
+			<div id="descriptionBox">
+				<h1>The Summer Truffle</h1>
+				<a id="description">laya hills sparked with unicorn poopThis
+					is a fresh brandnew summer truffle woth alot of money produced in the imalaya hills sparked with
+					unicorn poopThis is a fresh brandnew
+					summer truffle woth alot of
+					money produced in the imalaya hills
+					sparked with unicorn poopThis is a fresh brandnew </a>
+			</div>
+		</div>
+		<div id="tableBox">
+			<table>
+				<thead>
+					<tr>
+						<th>seller</th>
+						<th>Savings</th>
+						<th>Month</th>
+						<th>Savings</th>
+						<th>Month</th>
+						<th>Buy Now</th>
+						<th> Now</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each product}}
+					<tr>
+						<th><a href="../seller/profile/{{ this.seller_seller_Id}}">{{ this.seller_seller_Id}}</a></th>
+						<th>{{ this.type }}</th>
+						<th>{{ this.grade }}</th>
+						<th>{{ this.price}}</th>
+						<th>{{ this.weight }}</th>
+						<th>{{this.id}}</th>
+						<th><input type="button" onclick="location.href='/addcart/{{this.id}}';" value="Add cart" />
+						</th>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

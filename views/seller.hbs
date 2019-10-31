@@ -1,0 +1,144 @@
+<div id="container">
+    <div class='backdrop'>
+        <div id='orders'>
+            <div>
+                <table>
+                         <div id="title"><a >Please Ship the following products</a></div>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Grade</th>
+                            <th>transaction_Item_Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each singleOrder}}
+                        <tr>
+                            <th>{{ this.type }}</td>
+                            <th>{{ this.grade }}</td>
+                            <th>{{ this.id }}</td>
+                        </tr>
+                        <tr>
+                            <th><input type="button"
+                                    onclick="location.href='/seller/ship/{{this.transaction_id}}';"
+                                    value="{{this.transaction_id}}Ship it" /></th>
+                        </tr>
+                        {{/each}}
+                        {{#each multipleOrder}}
+                        {{#each this}}
+                        <tr>
+                            <th>{{ this.type }}</td>
+                            <th>{{ this.grade }}</td>
+                            <th>{{ this.id }}</td>
+
+                                {{/each}}
+                        <tr>
+                            <th><input type="button"
+                                    onclick="location.href='/seller/ship/{{this.0.transaction_id}}';"
+                                    value="{{this.0.transaction_id}}Ship them" /></th>
+                        </tr>
+                        </tr>
+                        {{/each}}
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class='backdrop'>
+        <div id='item'>
+            <div id='preview'>
+                <div>
+                    <table>
+                       <div id="title"><a >Your Active Listing</a></div>
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Grade</th>
+                                <th>Weight</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each product}}
+                            <tr>
+                            <th>{{ this.type }}</td>
+                            <th>{{ this.grade }}</td>
+                            <th>{{ this.id }}</td>
+
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id='addition'></div>
+            <form action="/seller" method="post">
+                <div id='product_types_wrapper'>
+                    <select name="product_types" class="select-css">
+                        <option value="summer_truffle">summer truffle</option>
+                        <option value="winter_truffle">winter truffle</option>
+                        <option value="brown_caviar">white truffle</option>
+                        <option value="purple_rainbow">prawns</option>
+                    </select>
+                    
+                    <select name="grade" class="select-css">
+                        <option value="grade_A">Grade_A</option>
+                        <option value="grade_B">Grade_B</option>
+                        <option value="grade_C">Grade_C</option>
+                        <option value="grade_D">Grade_D</option>
+                    </select>
+           
+                <div>
+                    <label id="label">Weight</label>
+                    <input type="text" class="form-control" name="product_weight">
+                </div>
+                <div>
+                    <label id="label">Price/g</label>
+                    <input type="text" class="form-control" name="selling_price">
+                </div>
+                <button type="submit" class="">Sell</button>
+                     </div>
+            </form>
+        </div>
+    </div>
+    <div class='backdrop'>
+        <div id='sales'>
+            <table>
+                    <div id="title"><a >Orders that were sent off</a></div>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Grade</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each shippedsingleOrder}}
+                    <tr>
+                        <th>{{ this.type }}</td>
+                        <th>{{ this.grade }}</td>
+                        <th>{{ this.id }}</td>
+                    </tr>
+                    <tr>
+                        <th><a>{{this.status}}</a></th>
+                    </tr>
+                    {{/each}}
+                    {{#each shippedmultipleOrder}}
+                    {{#each this}}
+                    <tr>
+                        <th>{{ this.type }}</td>
+                        <th>{{ this.grade }}</td>
+                        <th>{{ this.id }}</td>
+                            {{/each}}
+                    <tr>
+                        <th><input type="button" onclick="location.href='/seller/ship/';"
+                                value="{{this.0.status}}Ship them" /></th>
+                    </tr>
+                    </tr>
+                    {{/each}}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

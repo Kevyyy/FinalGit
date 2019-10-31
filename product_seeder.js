@@ -11,40 +11,120 @@ mongoose.connect(url, {useNewUrlParser: true });
 
 var products = [
 new Product({
-    imagePath: 'https://upload.wikimedia.org/wikipedia/en/5/5e/Gothiccover.png',
-    title: 'Gothic Video Game',
-    description: 'Awesome Game!!!!',
-    price: 10
+    imagePath: '/images/black_truffles.png' ,
+    title: 'Summer truffles',
+    description: 'great truffles',
+    name: 'truffle',
+    link: 'summer_truffle'
 }),
 new Product({
-    imagePath: 'http://eu.blizzard.com/static/_images/games/wow/wallpapers/wall2/wall2-1440x900.jpg',
-    title: 'World of Warcraft Video Game',
-    description: 'Also awesome? But of course it was better in vanilla ...',
-    price: 20
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle',
+    link: 'white_truffle'
 }),
 new Product({
-    imagePath: 'https://support.activision.com/servlet/servlet.FileDownload?file=00PU000000Rq6tz',
-    title: 'Call of Duty Video Game',
-    description: 'Meh ... nah, it\'s okay I guess',
-    price: 40
+    imagePath: '/images/burgundy_truffles.png',
+    title: 'Burgundy truffles',
+    description: 'great truffles',
+    name: 'truffle',
+    link: 'burgundy_truffle'
 }),
 new Product({
-    imagePath: 'https://pmcdeadline2.files.wordpress.com/2014/02/minecraft__140227211000.jpg',
-    title: 'Minecraft Video Game',
-    description: 'Now that is super awesome!',
-    price: 15
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle',
+    link: 'white_truffle'
 }),
 new Product({
-    imagePath: 'https://d1r7xvmnymv7kg.cloudfront.net/sites_products/darksouls3/assets/img/DARKSOUL_facebook_mini.jpg',
-    title: 'Dark Souls 3 Video Game',
-    description: 'I died!',
-    price: 50000
+    imagePath: '/images/burgundy_truffles.png',
+    title: 'Burgundy truffles',
+    description: 'great truffles',
+    name: 'truffle',
+    link: 'burgundy_truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/black_truffles.png' ,
+    title: 'Summer truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/burgundy_truffles.png',
+    title: 'Burgundy truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
+}),
+new Product({
+    imagePath: '/images/white_truffles.png',
+    title: 'White truffles',
+    description: 'great truffles',
+    name: 'truffle'
 })
 ];
 
 
-
 var done = 0;
+
+Product.deleteMany({}, function(err,removed){
+    if (err)
+    throw err
+    console.log(removed)
+    insert()
+});
+
+
+function insert(){
 for (var i = 0; i < products.length; i++) {
     products[i].save(function(err, result) {
         done++;
@@ -52,9 +132,10 @@ for (var i = 0; i < products.length; i++) {
             exit();
         }
     });
-}
+}}
 
 function exit() {
     mongoose.disconnect();
 }
+
 

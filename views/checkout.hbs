@@ -3,10 +3,21 @@
 <div id='container'>
   <form action="/checkout" method="post" id="payment-form">
     <div class="form-row">
+        <label for="Address">Postal Code</label>
+     <input type="text" class="form-control" name="postCode">
     <label for="Name">Name</label>
      <input type="text" class="form-control" name="name">
-    <label for="Address">Address</label>
+    <label for="Address">Street </label>
      <input type="text" class="form-control" name="address">
+    <label for="Address">Street Number</label>
+     <input type="text" class="form-control" name="streetNumber">
+    <label for="Name">City</label>
+     <input type="text" class="form-control" name="city">
+    <label for="Address">State/Province</label>
+     <input type="text" class="form-control" name="state">
+     <label for="Address">Country</label>
+     <input type="text" class="form-control" name="country">
+
       <label for="card-element">
         Credit or debit card
       </label>

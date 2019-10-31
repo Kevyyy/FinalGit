@@ -1,0 +1,55 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+#chatBar{
+position:fixed;
+top:475px;
+left:40px;
+z-index:1;
+}
+.chatBox{
+  margin-left:200px;
+  position:fixed;
+  right:300px;
+}
+#chatForm{
+  width: 260px;
+  height:345px;
+  border: 1px solid gray;
+}
+#chatBanner{
+  width:100%;
+  height:25px;
+  background-color: black;
+  display: inline-flex;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+#chatBarTitle-chatbox{
+  color:white;
+}
+#chatBanner-chatbox{
+  height:50px;
+  background-color:white;
+  border-bottom: 1px solid gray;
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+#sendBarChatBox{
+  display: grid;
+  grid-template-columns: 85% 15%;
+}
+#chatMessage{
+  width:100%;
+  height:230px;
+  background-color: white;
+}
+#sendChat{
+  width:100%;
+  background-color: black;
+}
+#inputChatbox{
+  width:100%;
+  height:40px;
+}

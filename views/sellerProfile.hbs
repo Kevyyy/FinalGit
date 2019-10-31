@@ -1,0 +1,65 @@
+<div id="container">
+  <div id='infoContainer'>
+    <div>
+
+      <div id="avatar" style="background-image:url('{{imagePath}}')" ; onclick="getFile()">
+        <form action="/seller/profile/avatar" method="post" enctype="multipart/form-data">
+          <input type="file" name="myImage" id="upfile" />
+          <button type="submit" class="">UpdateImage</button>
+        </form>
+      </div>
+    </div>
+    <div id="Seller">
+      <div id="rating">
+        <div> <a>STAR-STAR-STAR-STAR-STARs</a></div>
+        <div id="container">
+          <a> {{soldStock.stock_type}}</a>
+          <a> {{soldStock.stock_grade}}</a>
+          <a> {{soldStock.stock_stock_Id}}</a>
+          <a> {{soldStock.review}}</a>
+
+        </div>
+        <div id='stock'>
+
+          <div id="container">
+            <a> {{stock.stock_type}}</a>
+            <a> {{stock.stock_grade}}</a>
+            <a> {{stock.stock_price}}</a>
+
+          </div>
+        </div>
+        <div id="message-container">
+
+        </div>
+        <label for="msg"><b>Message</b></label>
+        <textarea id="messageBox"=placeholder="Type message.."></textarea>
+
+        <button onclick="send()">sadfa</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </div>
+
+
+    </div>
+  </div>
+  <script type="text/javascript">
+    function getFile() {
+      document.getElementById("upfile").click();
+    }
+    var socket = io();
+    function send() {
+      socket.emit('send', '{{roomNumber}}');
+      var message = document.getElementById("messageBox").value;
+      socket.emit('send-chat-message', message);
+      appendMessage(`You: ${message}`);
+      message = '';
+    }
+    socket.on('chat-message', function (data) {
+      appendMessage(`${data.name}: ${data.message}`)
+    })
+    function appendMessage(message) {
+      console.log("this is our message", message)
+      const messageElement = document.createElement('div');
+      messageElement.innerText = message;
+      document.getElementById('message-container').append(messageElement);
+    }
+  </script>

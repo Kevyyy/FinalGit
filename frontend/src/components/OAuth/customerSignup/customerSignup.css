@@ -1,0 +1,138 @@
+body {
+  margin:0px;
+  padding:0px;
+}
+#wrapper-customerSignup {
+margin:0 auto;
+text-align:left;
+height:100%;
+padding-top:300px;
+width:75%;
+display:grid;
+grid-template-columns: 40% 20% 40%;
+}
+#inputCustomerSignup {
+  width: 100%;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+}
+#inputCustomerSignup:focus {
+  outline: none;
+  border-bottom: 2.5px solid black;
+}
+#names{
+  display:inline-flex;
+}
+#names :first-child {
+  width: 100%;
+}
+.name-wrapper-customerSignup{
+  margin-right:22px;
+}
+
+#buttonLoginSeller-customerSignup{
+  margin-top:20px;
+  width: 40%;
+  background-color: white;
+  color:black;
+  padding: 5px 10px;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#buttonWrapper-customerSignup{
+  text-align: center;
+}
+#buttonLoginSeller-customerSignup:hover {
+  background-color:black;
+  color:white;
+}
+button, select, textarea {
+font-family : Arial;
+font-size   : 80%;
+}
+label { 
+  font-family: Arial;
+  font-size:12px; 
+  }
+input[name=facebookInput], textarea {
+    font-family:Arial;
+    font-size:20px;
+  }
+  input[name=gmailInput], textarea {
+    font-family:Arial;
+    font-size:20px;
+  }
+#mediaLogin{
+  padding-top:40px;
+}
+#checkbox-customerSignup{
+  margin-top:20px;
+}
+#facebookButton{
+  width: 100%;
+  background-color: #3C5A99;
+  color: white;
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  }
+#text-customerSignup{
+  font-family: "Palatino Linotype", Palatino, serif;
+  font-size: 10px;
+}
+#gmailButton{
+width: 100%;
+background-color: white;
+color: black;
+padding: 20px 20px;
+margin: 8px 0;
+border: 1px solid black;
+cursor: pointer;
+}
+#errors{
+  position: absolute;
+  top: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+  #facebookButton{
+    width: 100%;
+    background-color: #3C5A99;
+    color: white;
+    padding: 20px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    }
+  #gmailButton{
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  }
+  #errors{
+    position: absolute;
+    top: 200px;
+  }

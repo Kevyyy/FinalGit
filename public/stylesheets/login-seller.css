@@ -1,0 +1,44 @@
+body {
+    margin:0px;
+    padding:0px;
+    background-color:#D3D3D3;
+  }
+  #wrapper {
+  margin:0 auto;
+  text-align:left;
+  height:100%;
+  padding-top:300px;
+  width:30%;
+  }
+  label { 
+  font-style: Verdana;
+  font-size:15px; 
+  }
+  input[type=text] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  button[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  
+  button[type=submit]:hover {
+  background-color: black;
+  }
+  button, input, select, textarea {
+  font-family : verdana;
+  font-size   : 80%;
+  }
+  

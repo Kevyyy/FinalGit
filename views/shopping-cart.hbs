@@ -4,9 +4,10 @@
                 {{# each products }}
         <div id="border">
             <ul>
-                    <li class="list-group-item"><a>{{ this.qty }}{{ this.item.title }}${{ this.price }}</a>
-                    <li><a href="/reduce/{{this.item._id}}">Reduce by 1</a></li>
-                    <li><a href="/remove/{{this.item._id}}">Remove All</a></li>
+                    <li class="list-group-item"><a>{{ this.qty }}${{ this.price }}{{# each item }}{{ this.type }}</a>
+                    <li><a href="/reduce/{{this.id}}">Reduce by 1</a></li>
+                    <li><a href="/remove/{{this.id}}">Remove All</a></li>
+                    {{/each}}
                             </ul>
                         </div>
                     </li>

@@ -1,5 +1,37 @@
 body {
     margin:0px;
     padding:0px;
-    background-color: GREEN;
   }
+
+#container{
+    padding-top:200px;
+  }
+#orders{
+    margin: 0 auto;
+    border:1px solid black;
+    width:90%;
+    padding-top:10px;
+    height:200px;
+    border-radius:10px
+  }
+#orders-header{
+    height:50px;
+    display:grid;
+    grid-template-columns: 33% 33% 33%;
+    border-bottom:1px solid black;
+  }
+.headers-details{
+  padding-left:20px;
+}
+#title{
+  margin-left:20px;
+  font-size: 20px;
+}
+#item{
+  margin-left:20px;
+  margin-top:10px;
+}
+#price{
+  margin-left:20px;
+  margin-top:-10px;
+}

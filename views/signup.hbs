@@ -1,19 +1,47 @@
+<div id='errors'>
+  {{#if hasErrors}}
+  {{# each messages}}
+   <p>{{this}}</p>
+  {{/each}}
+  {{/if}}
+   </ul>
+</div>
+  </section>
+  <form action="/signup" method="post">
+    <div id="wrapper">
+    <div id="localSignup-container">
+    <div id="names">
+    <div class="name-wrapper">
+     <label>First Name</label>
+     <input type="text" class="form-control" name="firstName" maxlength="40">
+     </div>
+     <div >
+     <label>Last Name</label>
+     <input type="text" class="form-control" name="lastName" maxlength="40">
+     </div>
+    </div> 
+     <div>
+     <label>Email</label>
+     <input type="text" class="form-control" name="username" maxlength="40">
+     </div>
+     <div>
+     <label>Password</label>
+     <input type="password" class="form-control" name="password" maxlength="100">
+     </div>
+    <button type="submit" class="btn btn-succcess btn-lg">Signup</button>
+    </form>
 
-   <div id="wrapper">
-   <form action="/signup" method="post">
-    <div >
-     <label id="label">Username</label>
-     <input type="text" class="form-control" name="username" placeholder="youremail@example.com">
+    
+    <input type="checkbox" name="vehicle1" value="Bike"> <a>Notify me when products are availble</a><br>
+    <a href='/distributor_signup'>Seller?</a>
     </div>
-    <div>
-     <label id="label">Password</label>
-     <input type="text" class="form-control" name="password">
+    <div id="loginDivider-container">
+
     </div>
-    <div>
-     <input type="hidden"  name="csrf">
+    <div id="mediaLogin">
+        <div id="">
+        <input type="button" name="facebookInput" id="facebookButton" onclick="location.href='/addcart/{{this._id}}';" value="Continue with Facebook" />
+        <input type="button" name="gmailInput" id="gmailButton" onclick="location.href='/addcart/{{this._id}}';" value="Continue with google" />
+        </div>
     </div>
-    <div>
     </div>
-    <button type="submit" class="">Register</button>
-   </form>
-  </div>

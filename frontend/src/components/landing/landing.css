@@ -1,0 +1,123 @@
+body {
+    margin:0px;
+    padding: 0px;
+  }
+  
+  #slide1{
+    padding-top:120px;
+    width: 100%;
+    height:600px;
+    background-color:white;
+    max-width:1700px;
+    overflow: hidden;
+  }
+  
+  #Main-title{
+    width:50%;
+    padding-top:100px;
+    padding-left:100px;
+  }
+  .title1{
+      font-family:Bookman,sans-serif;
+      color:#E20000;
+      font-size:40px;
+      font-weight: bold;
+  }
+  #prawns{
+    position: absolute;
+    width:40%;
+    margin-left: 50%;
+    margin-top: 0px;
+    min-width: 400px
+  }
+  .subtitle1{
+    margin-top:-30px;
+    font-size:20px;
+    font-family: verdana;
+    color:black;
+  }
+  .button-subsciption{
+    background-color:white;
+    padding:10px;
+    border-radius: 14px;
+    border: 4px solid red;
+    font-size:17px;
+  }
+  .button-subsciption:hover{
+    background-color:rgba(255,0,0,0.5);
+    transition:0.5s;
+  }
+  
+  #slide2{
+    width:100%;
+    height:700px;
+    background-image: 
+    linear-gradient(to top, rgba(250,5,0,0.75), rgba(255,0,0,0.9));;
+    z-index: 3;
+  }
+  #Main-title2{
+    width:50%;
+    padding-top:100px;
+    padding-left:50%;
+  }
+  .title2{
+     font-family:Bookman,sans-serif;
+      font-size:40px;
+      font-weight: bold;
+      color:white;
+      padding-bottom: 20px;
+  }
+  #Main-title2{
+    width:50%;
+    padding-top:100px;
+    padding-left:50%;
+  }
+  .title2{
+     font-family:Bookman,sans-serif;
+      font-size:40px;
+      font-weight: bold;
+      color:white;
+      padding-bottom: 20px;
+  }
+  .Bestprices{
+    margin-top:-20px;
+    font-size:20px;
+    font-family: Bookman,sans-serif;
+    font-weight: bold;
+    color:white;
+  }
+  .dollarsign{
+    font-size:30px;
+    font-family: Bookman,sans-serif;
+    font-weight: bold;
+    color:white;
+  }
+  .DescriptionPrices{
+    margin-top:-20px;
+    font-size:17px;
+    font-family: Bookman,sans-serif;
+    color:white;
+  }
+  
+  .InstantConnection{
+    margin-top:-30px;
+    font-size:20px;
+    font-family: Bookman,sans-serif;
+    font-weight: bold;
+    color:white;
+    margin-left:20px;
+  }
+  .subsubtitle2{
+    color:white;
+    margin-right:30px;
+    font-size:15px;
+    margin-left:20px;
+  }
+  .row {
+    display: flex;
+  
+  }
+  .columnslide2{
+    flex: 33%;
+    display: inline-block;
+  }

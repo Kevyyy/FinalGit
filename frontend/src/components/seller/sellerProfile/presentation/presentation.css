@@ -1,0 +1,81 @@
+
+#wrapper-profile-image-presentationSetting{
+position: relative;
+margin-top:200px;
+}
+#profile-image-presentationSetting{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  background-color:red;
+}
+.image-cropper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.row{
+  background-color: brown;
+}
+.profile-picture-presentation-setting {
+  height: 100%;
+  width: auto;
+}
+#uploadcare-button-div-presentation-setting{
+  width:100%
+}
+#uploadcare-button-wrapper-presentation-setting{
+  display: block;
+  position: absolute;
+  top: -15px;
+  left: 46.5%;
+  z-index: 1;
+  opacity: 0;
+}
+#uploads-Div-presentation-setting{
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  z-index: 1;
+  opacity: 0;
+  background-color:brown;
+}
+#uploads-Div-presentation-setting:hover{
+  opacity: 0.5;
+
+}
+
+.image-cropper-uploads-Div{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.uploader-demo-crazy .uploadcare--widget__button_type_open {
+  cursor: pointer;
+  font-size: 0px;
+  text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.25);
+  padding: 1px 14px;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: -webkit-transform 0.25s;
+  -moz-transition: -moz-transform 0.25s;
+  transition: transform 0.25s;
+}
+.uploader-demo-crazy .uploadcare--widget__dragndrop-area {
+  line-height: 3.4;
+  margin-top: -1.8em;
+}

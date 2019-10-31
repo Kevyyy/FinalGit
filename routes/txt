@@ -1,0 +1,99 @@
+OLD EASYPOST STUFF
+ /*var newShipping = {
+                            fromStreet: req.user[0].street_number.concat(" ", req.user[0].street),
+                            fromCity: req.user[0].city,
+                            fromState: req.user[0].state,
+                            fromZip: req.user[0].post_code,
+                            fromCountry: req.user[0].country,
+                            fromCompany: req.user[0].compagny_name,
+                            fromPhone: null,
+
+                            toStreet: Data[0].street_number.concat(" ", Data[0].street),
+                            toCity: Data[0].city,
+                            toState: Data[0].state,
+                            toZip: Data[0].post_code,
+                            toCountry: Data[0].country,
+                            toCompany: null,
+                            toPhone: null,
+
+                            parcelWeight: heaviness,
+                            parcelHeight: 20,
+                            parcelWidth: 20,
+                            parcelLenght: 20,
+
+                        }
+                        const fromAddress = new api.Address({
+                            street1: newShipping.fromStreet,
+                            street2: null,
+                            city: newShipping.fromCity,
+                            state: newShipping.fromState,
+                            zip: newShipping.fromZip,
+                            country: newShipping.fromCountry,
+                            company: newShipping.fromCompany,
+                            phone: newShipping.fromPhone,
+                        });
+                         const customsInfo = new api.CustomsInfo({
+                                eel_pfc: 'NOEEI 30.37(a)',
+                                customs_certify: true,
+                                customs_signer: 'Steve Brule',
+                                contents_type: 'merchandise',
+                                contents_explanation: '',
+                                restriction_type: 'none',
+                                restriction_comments: '',
+                                non_delivery_option: 'abandon',
+                            });
+                        
+
+                        const parcel = new api.Parcel({
+                            length: newShipping.parcelWeight,
+                            width: newShipping.parcelHeight,
+                            height: newShipping.parcelWidth,
+                            weight: newShipping.parcelLenght
+                        });
+                         parcel.save()
+                            .then(console.log(parcel, "DUDEE"))
+                            .catch((error) => { console.log("ParcelSave", error) })
+
+
+                        const shipment = new api.Shipment({
+                            to_address: toAddress,
+                            from_address: fromAddress,
+                            parcel: parcel,
+                          //  customs_info: customsInfo
+                        });
+
+                            .then((shipment) => {
+                                console.log(shipment);
+                                let inserter = 0
+                                for (let [_, obj] of Object.entries(results)) {
+                                    itemInside = obj
+                                    console.log("sd",itemInside.id)
+                                    inserter++
+                                    var insertQuery = "UPDATE transaction_Item SET  ?, ? WHERE id = ?";
+                                    connection.query(insertQuery, [{ shipped: 'ye' }, { status: 'started' }, itemInside.id],
+                                        function (err, rows) {
+                                            if (err)
+                                                throw err;
+                                            if (inserter === Object.keys(results).length) {
+                                                   console.log('done');
+
+                                            }
+                                        });
+
+                                }
+                            });*/
+
+                        /*shipment.save()
+                            .catch(e => { console.log("wewegwe", e); })
+                            .then(s =>
+                                s.buy(shipment.lowestRate(['USPS'], ['First']), 100)
+                                    .catch(e => { console.log("wdsawe", e); })
+                                    .then(console.log())
+                            );*/ 
+                            
+                            
+    <StripeProvider apiKey="pk_test_ffPSh6rgb6zxNAOr5n1hEB3300JNvY4Vid">
+          <Elements>
+          <Route path="/checkout" component={checkout} />
+          </Elements>
+    </StripeProvider>

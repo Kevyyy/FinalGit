@@ -2,9 +2,6 @@ body {
   margin:0px;
   padding: 0px;
 }
-/* navbar */
-/* navbar */
-
 #slide1{
   padding-top:120px;
   width: 100%;
@@ -68,4 +65,58 @@ body {
     font-weight: bold;
     color:white;
     padding-bottom: 20px;
+}
+#Main-title2{
+  width:50%;
+  padding-top:100px;
+  padding-left:50%;
+}
+.title2{
+   font-family:Bookman,sans-serif;
+    font-size:40px;
+    font-weight: bold;
+    color:white;
+    padding-bottom: 20px;
+}
+.Bestprices{
+  margin-top:-20px;
+  font-size:20px;
+  font-family: Bookman,sans-serif;
+  font-weight: bold;
+  color:white;
+}
+.dollarsign{
+  font-size:30px;
+  font-family: Bookman,sans-serif;
+  font-weight: bold;
+  color:white;
+}
+.DescriptionPrices{
+  margin-top:-20px;
+  font-size:17px;
+  font-family: Bookman,sans-serif;
+  color:white;
+}
+
+.InstantConnection{
+  margin-top:-30px;
+  font-size:20px;
+  font-family: Bookman,sans-serif;
+  font-weight: bold;
+  color:white;
+  margin-left:20px;
+}
+.subsubtitle2{
+  color:white;
+  margin-right:30px;
+  font-size:15px;
+  margin-left:20px;
+}
+.row {
+  display: flex;
+
+}
+.columnslide2{
+  flex: 33%;
+  display: inline-block;
 }

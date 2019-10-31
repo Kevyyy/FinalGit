@@ -1,0 +1,122 @@
+body {
+    margin:0px;
+    padding:0px;
+    background-color:#C0C0C0;
+  }
+  #wrapper {
+  margin:0 auto;
+  text-align:left;
+  height:100%;
+  padding-top:200px;
+  width:60%;
+  }
+  input[type=text] {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  }
+  
+  input[type=password] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    }
+  #names{
+    display:inline-flex;
+  }
+  #names :first-child {
+    width: 100%;
+  }
+  #names :nth-child(3) {
+    width: 70%;
+  }
+  .name-wrapper{
+    margin-right:22px;
+  }
+  .name-wrapper2{
+    margin-right:150px;
+  }
+  #contact{
+    display:inline-flex;
+  }
+  #address{
+    display:inline-flex;
+  }
+  .address-wrapper{
+    margin-right:22px;
+  }
+  .address-wrapper2{
+    margin-right:22px;
+  }
+  .address-wrapper3{
+    margin-right:22px;
+  }
+  #country-wrapper{
+    width:10%;
+  }
+  #password-wrapper{
+      width:40%;
+  }
+  button[type=submit] {
+  width: 100%;
+  background-color: black;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  }
+  
+  button[type=submit]:hover {
+  background-color: black;
+  }
+  button, select, textarea {
+  font-family : Arial;
+  font-size   : 80%;
+  }
+  label { 
+    font-family: Arial;
+    font-size:12px; 
+    }
+  input[name=facebookInput], textarea {
+      font-family:Arial;
+      font-size:20px;
+    }
+    input[name=gmailInput], textarea {
+      font-family:Arial;
+      font-size:20px;
+    }
+  #mediaLogin{
+    padding-top:75px;
+  }
+  #facebookButton{
+    width: 100%;
+    background-color: #3C5A99;
+    color: white;
+    padding: 20px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    }
+  #gmailButton{
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  }
+  #errors{
+    position: absolute;
+    top: 200px;
+  }

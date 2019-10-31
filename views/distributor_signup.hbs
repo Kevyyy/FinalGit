@@ -1,0 +1,81 @@
+<div id='errors'>
+  {{#if hasErrors}}
+  {{# each messages}}
+   <p>{{this}}</p>
+  {{/each}}
+  {{/if}}
+   </ul>
+</div>
+</section>
+<form action="/distributor_signup" method="post">
+   <div id="wrapper">
+      <div id="localSignup-container">
+         <div id="names">
+            <div class="name-wrapper">
+               <label>First Name</label>
+               <input type="text" class="form-control" name="firstName" maxlength="40">
+            </div>
+            <div class="name-wrapper2">
+               <label>Last Name</label>
+               <input type="text" class="form-control" name="lastName" maxlength="40">
+            </div>
+             <div>
+               <label>Business Name</label>
+               <input type="text" class="form-control" name="businessName" maxlength="40">
+            </div>
+            <div>
+               <label>City</label>
+               <input type="text" class="form-control" name="city" maxlength="40">
+            </div>
+         </div>
+         <div id="contact">
+         <div class="name-wrapper">
+            <label>Business Email</label>
+            <input type="text" class="form-control" name="username" maxlength="40">
+         </div>
+         <div>
+            <label>Business Number</label>
+            <input type="text" class="form-control" name="phoneNumber" maxlength="40">
+         </div>
+         </div>
+           <div id="address">
+            <div class="address-wrapper">
+               <label>street</label>
+               <input type="text" class="form-control" name="street" maxlength="40">
+            </div>
+            <div class="address-wrapper">
+               <label>streetNumber</label>
+               <input type="text" class="form-control" name="streetNumber" maxlength="40">
+            </div>
+            <div class="address-wrapper">
+               <label>State</label>
+               <input type="text" class="form-control" name="state" maxlength="40">
+            </div>
+            <div class="address-wrapper3">
+               <label>Post Code</label>
+               <input type="text" class="form-control" name="postCode" maxlength="40">
+            </div>
+            </div>
+             <div id='country-wrapper'>
+               <label>Country</label>
+               <input type="text" class="form-control" name="Country" maxlength="40">
+            </div>
+            <div id='password-wrapper'>
+         <div>
+            <label>Password</label>
+            <input type="password" class="form-control" name="password" maxlength="100">
+         </div>
+         <div>
+            <label>Password confirm</label>
+            <input type="password" class="form-control" name="password1" maxlength="100">
+         </div>
+         </div>
+         <button type="submit" class="btn btn-succcess btn-lg">login</button>
+         
+      </div>
+      <div id="loginDivider-container">
+
+      </div>
+
+   </div>
+</form>

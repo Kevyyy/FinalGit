@@ -1,0 +1,52 @@
+#container{
+    margin-top:200px;
+
+}
+#avatar{
+    border-radius:50%;
+    width:120px;
+    height:120px;
+    margin:0 auto;
+    background-size: contain;
+
+  background-repeat: no-repeat;
+}
+input[type="file"] {
+    display: none;
+    background-color:red;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+}
+button[type ='submit']{
+    margin-top:200px;
+}
+#message-container {
+  width: 80%;
+  height:200px;
+  max-width: 1200px;
+}
+#message-container div {
+  background-color: #CCC;
+  padding: 5px;
+}
+#message-container div:nth-child(2n) {
+  background-color: #FFF;
+}
+
+#infoContainer{
+    margin-top:100px;
+    display:grid;
+    grid-template-columns: 30% 70%;
+    background-color: purple;
+    height:900px;
+}
+#Seller{
+    background-color:green;
+}
+#stock{
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20%;
+}

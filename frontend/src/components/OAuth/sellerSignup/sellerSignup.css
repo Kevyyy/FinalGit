@@ -1,0 +1,70 @@
+body {
+    margin:0px;
+    padding:0px;
+    background-color: white;
+  }
+  #wrapper {
+  margin:0 auto;
+  text-align:left;
+  height:100%;
+  padding-top:200px;
+  width:60%;
+  }
+  #names{
+    display:inline-flex;
+  }
+  #names :first-child {
+    width: 100%;
+  }
+  #names :nth-child(3) {
+    width: 70%;
+  }
+  .name-wrapper{
+    margin-right:22px;
+  }
+  .name-wrapper2{
+    margin-right:150px;
+  }
+  #contact{
+    display:inline-flex;
+  }
+  #address{
+    display:inline-flex;
+  }
+  .address-wrapper{
+    margin-right:22px;
+  }
+  .address-wrapper2{
+    margin-right:22px;
+  }
+  .address-wrapper3{
+    margin-right:22px;
+  }
+  #country-wrapper{
+    width:10%;
+  }
+  #password-wrapper{
+      width:40%;
+  }
+
+ 
+  button, select, textarea {
+  font-family : Arial;
+  font-size   : 80%;
+  }
+  label { 
+    font-family: Arial;
+    font-size:12px; 
+    }
+  input[name=facebookInput], textarea {
+      font-family:Arial;
+      font-size:20px;
+    }
+    input[name=gmailInput], textarea {
+      font-family:Arial;
+      font-size:20px;
+    }
+  #errors{
+    position: absolute;
+    top: 200px;
+  }

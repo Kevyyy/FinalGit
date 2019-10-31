@@ -12,7 +12,7 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || '3001');
 app.set('port', port);
 
 /**
@@ -20,10 +20,114 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+var io = require('socket.io')(server);
+var mysql = require('mysql');
+var dbconfig = require('../config/models/database_config');
+var connection = mysql.createConnection(dbconfig.connection, ({ multipleStatements: true }));
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+var Messages = require('../config/models/messages');
+var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost:27017/shopping', {useNewUrlParser: true });
+var url = process.env.MONGODB_URI || 'mongodb://localhost:27017/shopping';
+mongoose.connect(url, { useNewUrlParser: true });
+
+connection.query('USE ' + dbconfig.database);
+io.on('connection', function (socket) {
+
+  console.log('someone connected');
+  //RETRIEVING PAST CONVERSATIONS
+
+  /* function startConversation (req, res, next) {
+     req.user[0].type;
+     var userType = req.user.type || null
+  switch (userType) {
+       case "customer":
+         connection.query('SELECT * FROM conversations WHERE customer_id = ?', [req.user.id],
+           function (err, rows) {
+             if (rows) {
+               var string = JSON.stringify(rows);
+               var results = JSON.parse(string);
+               socket.emit("retrieveChat", results);
+               console.log("done")
+             }
+             else {
+               console.log("noConversationFound")
+             }
+           })
+         break;
+       case "seller":
+         connection.query('SELECT * FROM conversations WHERE seller_id = ?', [req.user.id],
+           function (err, rows) {
+             if (rows) {
+               var string = JSON.stringify(rows);
+               var results = JSON.parse(string);
+               socket.emit("retrieveChat", results);
+               console.log("done")
+             }
+             else {
+               console.log("noConversationFound")
+             }
+           })
+         break;
+     }
+   }*/
+
+  //startConversation()
+
+  socket.on('send', function (room) {
+    var str = room;
+    var pos = str.search("seller");
+    var userId = str.slice(4, pos)
+    var sellerId = str.slice(pos + 6)
+    connection.query('SELECT * FROM conversations WHERE conversationRoom = ? ', [room],
+      function (err, row) {
+        var string = JSON.stringify(row);
+        var results = JSON.parse(string);
+        if (err)
+          throw err
+        if (results.length)
+          console.log(results.length);
+        else
+          connection.query('INSERT INTO conversations (seller_id,customer_id,conversationRoom) values( ?, ?, ?)', [sellerId, userId, room],
+            function (err, rows) {
+              if (err)
+                throw err;
+              else console.log(rows)
+            })
+      })
+  });
+
+  socket.on('leaveRoom', function (room) {
+    socket.leave(room);
+  })
+
+  socket.on('send-chat-message', function(data){
+    var time = "time"
+    console.log("sdfsd",data)
+   /*var message = new Messages({
+      userId: data.id,
+      message: data.message,
+      time: time,
+      room: data.room,
+      type: data.type,
+    })
+    message.save(function (err, message) {
+      if (err) return console.error(err);
+      console.log("message saved!" + message.message);
+    });*/
+    socket.to(data.room).emit('incoming-chat-message', { message: data.currentMessage, id: data.id,type:data.type })
+    console.log(data.room)
+  })
+
+  socket.on('joinRoom',function(data){
+    console.log("dasdsdsa",data.room)
+   socket.join(data.room, function() {
+  console.log("Socket now in rooms", socket.rooms)
+   })
+  })
+
+});
+
 
 server.listen(port);
 server.on('error', onError);

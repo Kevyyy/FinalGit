@@ -1,0 +1,88 @@
+body {
+    margin:0px;
+    padding:0px;
+  }
+  #title-customerLogin{
+    text-align: center;
+    margin-bottom: 100px;
+  }
+  #title-customerLogin{
+    font-family: "Palatino Linotype", Palatino, serif;
+    font-size: 30px;
+  }
+  #titleWrapper-customerLogin{
+    text-align: center;
+    margin-bottom: 100px;   
+  }
+  #wrapper-customerLogin {
+  margin:0 auto;
+  text-align:left;
+  height:100%;
+  padding-top:200px;
+  width:25%;
+  }
+#wrapper-customerLogin {
+  margin:0 auto;
+  text-align:left;
+  height:100%;
+  padding-top:200px;
+  width:25%;
+  }
+#label-customerLogin{ 
+  font-style: Verdana;
+  font-size:  15px; 
+  }
+#buttonWrapperSellerLogin{
+    text-align: center;
+  }
+#username-customerLogin{
+    width: 100%;
+    padding: 8px 0px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    }
+
+#username-customerLogin:focus {
+      outline: none;
+      border-bottom: 2.5px solid black;
+  }
+  #password-customerLogin {
+    width: 100%;
+    padding: 8px 0px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    }
+  #password-customerLogin:focus {
+        outline: none;
+        border-bottom: 2.5px solid black;
+  }
+  #loginButton-customerLogin{
+    margin-top:20px;
+    text-align: center;
+    width: 40%;
+    background-color: white;
+    color:black;
+    padding: 5px 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #buttonWrapper-customerLogin{
+    text-align: center;
+  }
+  #loginButton-customerLogin:hover{
+    background-color:black;
+    color:white;
+  }
+  

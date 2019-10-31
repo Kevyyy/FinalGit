@@ -1,0 +1,27 @@
+body {
+    margin:0px;
+    padding: 0px;
+  }
+#chat-wrapper{
+ height:200px;
+ padding-top:200px;
+ 
+}
+#chatbox{
+    background-color:blue;
+    height:800px;
+    width:80%;
+    float:right;
+    overflow: scroll;
+}
+#chatSlide{
+    border:1px solid black;
+    height:100px;
+    background-color:red;
+    display: flex;
+    padding-top:100px;
+    padding-left:30px;
+}
+#name{
+    width:200px;
+}

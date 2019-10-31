@@ -4,6 +4,6 @@ module.exports = {
      'user':'root',
      'password':'password'
     },
-    'database':'Nodejs',
-    'user_table':'users'
+    'database':'Marketplace',
+    'user_table':'costumer'
    }
