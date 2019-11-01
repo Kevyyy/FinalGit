@@ -23,7 +23,7 @@ class DescriptionInput extends Component {
             })
             .then(
                 this.setState({
-                    description:this.state.info.description
+                    description:"dsfdsafdsafasdfdsfdsafsadfsdafsadf"
                 }));
 
     }
@@ -49,14 +49,17 @@ class DescriptionInput extends Component {
                 }}
             >
 
+                <div id='contentEditableDiv'>
+
                         <ContentEditable
                             onChange={e => this.setState({ description: e.target.value })}
                             type="text"
                             disabled={false}
                             html={this.state.description}
                             tagName='article'
+                            className='class'
                         />
-
+                </div>
             </OutsideClickHandler>
             </div>
         );

@@ -554,16 +554,17 @@ router.post('/checkout', isLoggedIn, async (req, res, next) => {
    * @param {Object} transaction 
    * @return {Promise<integer>} id of transaction
    */
-  function createTransaction(customerId, sellerId, transaction) {
+  function createTransaction(customerId, sellerId, transaction,totalTransactionId) {
     return new Promise((resolve, reject) => {
       connection.query(
         "INSERT INTO transaction " +
-        "(price, time, customer_id, seller_id) " +
+        "(price, time, customer_id, seller_id,total_transaction_id) " +
         "VALUES " +
-        "(?, ?, ?, ?)",
-        [transaction.totalPrice, new Date().toISOString(), customerId, sellerId],
+        "(?, ?, ?, ?,?)",
+        [transaction.totalPrice, new Date().toISOString(), customerId, sellerId,totalTransactionId],
         (error, result) => {
           if (error) return reject(error);
+          console.log("sdfsadfasd",result)
           resolve(result.insertId);
         })
     })
@@ -613,11 +614,11 @@ router.post('/checkout', isLoggedIn, async (req, res, next) => {
         "VALUES " +
         "(?, ?, 'no', 'no', ?)",
         [cart.totalPrice, new Date().toISOString(), customerId],
-        (error) => {
+        (error, result) => {
           if (error) return reject(error);
-          resolve();
-        }
-      );
+          console.log("sdfsadfasd",result.insertId)
+          resolve(result.insertId);
+        });
     });
   }
 
@@ -630,14 +631,15 @@ router.post('/checkout', isLoggedIn, async (req, res, next) => {
    */
   async function insertCustomerCart(customerId, cart) {
     const sellerTransactions = getSellerTransactionsFromCart(cart);
+    const totalTransactionId = await insertTotalTransaction(customerId, cart);
     console.log(sellerTransactions);
     console.log(req.user);
     for (const sellerId in sellerTransactions) {
       const transactionId
-        = await createTransaction(customerId, sellerId, sellerTransactions[sellerId]);
+        = await createTransaction(customerId, sellerId, sellerTransactions[sellerId],totalTransactionId);
       await insertTransactionItems(transactionId, sellerTransactions[sellerId].items);
     }
-    await insertTotalTransaction(customerId, cart);
+
   };
 
   function beginTransaction() {

@@ -1,3 +1,10 @@
 .row{
     background-color: red;
 }
+#contentEditableDiv{
+    width: 500px;
+}
+.class{
+    text-align: center;
+
+}

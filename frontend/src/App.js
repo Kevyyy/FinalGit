@@ -36,9 +36,13 @@ function App() {
       <Route path="/seller" component={Seller} />
       <Route path="/cart" component={shoppingCart} />
       <Route exact path="/" component={Landing} />
-      
+      <StripeProvider apiKey="pk_test_ffPSh6rgb6zxNAOr5n1hEB3300JNvY4Vid">
+        <Elements>
+        <Route path="/checkout" component={checkout} />
+        </Elements>
+  </StripeProvider>
     </Router>
-    
+
   );
 }
 

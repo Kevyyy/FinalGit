@@ -7,6 +7,7 @@
     "babel-plugin-react-css-modules": "^5.2.6",
     "email-validator": "^2.0.4",
     "extract-css-chunks-webpack-plugin": "^4.6.0",
+    "maxlength-contenteditable": "^1.0.1",
     "react": "^16.9.0",
     "react-avatar-edit": "^0.8.3",
     "react-contenteditable": "^3.3.2",

@@ -3,7 +3,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 
 #chatBar{
 position:fixed;
-top:475px;
+top:300px;
 left:40px;
 z-index:1;
 }
